@@ -18,6 +18,22 @@ app.get('/api/notes', (req, res) => {
     });
 });
 
+app.post('/api/notes', (req, res) => {
+    const newNote = req.body;
+    let newId = notes.length;
+
+    newNote['id'] = newId.toString();
+    newId++;
+    notes.push(newNote);
+
+    fs.writeFile('db/db.json', JSON.stringify(notes), err => {
+        if (err) { console.log(err) };
+        console.log('Successfully saved.')
+    });
+
+    return res.status(200).end();
+});
+
 app.get('/notes', (req, res) => res.sendFile(path.join(__dirname, './public/notes.html')));
 app.get('*', (req, res) => res.sendFile(path.join(__dirname, './public/index.html')));
 
