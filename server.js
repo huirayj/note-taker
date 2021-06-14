@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-let notes = require('./db/db.json');
+const notes = require('./db/db.json');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -37,8 +37,8 @@ app.delete('/api/notes/:id', (req, res, next) => {
     const id = req.params.id;
 
     fs.readFile('db/db.json', 'utf8', (err, data) => {
+        const updatedNotes = JSON.parse(data).filter(note => note.id !== id);
         let updatedId = 0;
-        let updatedNotes = JSON.parse(data).filter(note => note.id !== id);
 
         updatedNotes.map(note => {
             note.id = updatedId.toString();
