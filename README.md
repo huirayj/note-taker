@@ -30,7 +30,7 @@ In the following exercise, the user is given HTML documents that take text input
 
 ## Screenshots
 ### Desktop
-![Note Taker Desktop](./public/assets/screenshots/note-taker-desktop.png)
+![Note Taker Desktop](./public/assets/media/screenshots/note-taker-desktop.png)
 
 ## Demo
-![Note Taker Demo](./public/assets/demo/note-taker-demo.gif)
+![Note Taker Demo](./public/assets/media/demo/note-taker-demo.gif)
