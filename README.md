@@ -34,3 +34,4 @@ In the following exercise, the user is given HTML documents that take text input
 
 ## Demo
 ![Note Taker Demo](./public/assets/media/demo/note-taker-demo.gif)
+
