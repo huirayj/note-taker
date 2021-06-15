@@ -41,6 +41,5 @@ module.exports = (app) => {
         // writes note to database
         fs.writeFileSync('./db/db.json', JSON.stringify(updatedNotes), 'utf-8');
         res.json(notes);
-
     });
 };
