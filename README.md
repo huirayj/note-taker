@@ -14,7 +14,8 @@ In the following exercise, the user is given HTML documents that take text input
 
 ## Installation
 1. ```npm init```
-2. ```npm i -D nodemon```
+2. ```npm i express```
+3. ```npm i -D nodemon```
 
 ## Usage
 - ```node server.js``` to run the app, if not using Heroku.
