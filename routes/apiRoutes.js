@@ -1,16 +1,16 @@
 const fs = require('fs');
-const notes = require('../db/db.json');
 
 module.exports = (app) => {
     // gets all notes
-    app.get('/api/notes', (req, res, next) => {
-        fs.readFile('db/db.json', 'utf8', (err, data) => {
-            (err) ? next(err) : res.json(JSON.parse(data));
-        });
+    app.get('/api/notes', (req, res) => {
+        const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
+
+        res.json(notes);
     });
 
     // adds notes
-    app.post('/api/notes', (req, res, next) => {
+    app.post('/api/notes', (req, res) => {
+        const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
         const newNote = req.body;
         let newId = notes.length;
 
@@ -20,37 +20,27 @@ module.exports = (app) => {
         notes.push(newNote);
 
         // writes note to database
-        fs.writeFile('db/db.json', JSON.stringify(notes), err => {
-            (err) ? next(err) : console.log('Successfully saved.');
-        });
+        fs.writeFileSync('db/db.json', JSON.stringify(notes));
 
-        return res.status(200).end();
+        // return res.status(200).end();
+        res.json(notes);
     });
 
     // deletes a specific note
-    app.delete('/api/notes/:id', (req, res, next) => {
+    app.delete('/api/notes/:id', (req, res) => {
         const id = req.params.id;
-
-        fs.readFile('db/db.json', 'utf8', (err, data) => {
-            // returns non-deleted notes
-            const updatedNotes = JSON.parse(data).filter(note => note.id !== id);
-            let updatedId = 0;
-
-            // gives each note a new id
-            updatedNotes.map(note => {
-                note.id = updatedId.toString();
-                updatedId++;
-            });
-
-            // writes note to database
-            fs.writeFile('db/db.json', JSON.stringify(updatedNotes), (err) => {
-                if (err) {
-                    next(err);
-                } else {
-                    console.log('Successfully deleted');
-                    res.json(updatedNotes);
-                }
-            });
+        let updatedId = 0;
+        const notes = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
+        // returns non-deleted notes
+        const updatedNotes = notes.filter(note => note.id !== id);
+        // gives each note a new id
+        updatedNotes.map(note => {
+            note.id = updatedId.toString();
+            updatedId++;
         });
+        // writes note to database
+        fs.writeFileSync('./db/db.json', JSON.stringify(updatedNotes), 'utf-8');
+        res.json(notes);
+
     });
 };
