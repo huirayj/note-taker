@@ -22,7 +22,6 @@ module.exports = (app) => {
         // writes note to database
         fs.writeFileSync('db/db.json', JSON.stringify(notes));
 
-        // return res.status(200).end();
         res.json(notes);
     });
 
