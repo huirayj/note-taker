@@ -6,9 +6,6 @@ In the following exercise, the user is given HTML documents that take text input
 
 ## Table of Contents
 
-- [Simple Note Taker](#simple-note-taker)
-  - [Overview](#overview)
-  - [Table of Contents](#table-of-contents)
   - [Pseudocode](#pseudocode)
   - [Installation](#installation)
   - [Usage](#usage)
