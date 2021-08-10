@@ -1,13 +1,18 @@
 # Simple Note Taker
 
 ## Overview
-In the following exercise, the user is given HTML documents that take text inputs and saves them as JSON data and is tasked with creating a server script that links the Front-end and Back-end functionalities. 
+
+In the following exercise, the user is given HTML documents that take text inputs and saves them as JSON data and is tasked with creating a server script that links the Front-end and Back-end functionalities.
 
 ## Table of Contents
 
+- [Simple Note Taker](#simple-note-taker)
+  - [Overview](#overview)
+  - [Table of Contents](#table-of-contents)
   - [Pseudocode](#pseudocode)
   - [Installation](#installation)
   - [Usage](#usage)
+  - [Technologies Used](#technologies-used)
   - [Resources](#resources)
   - [Links](#links)
   - [Screenshots](#screenshots)
@@ -15,6 +20,7 @@ In the following exercise, the user is given HTML documents that take text input
   - [Demo](#demo)
 
 ## Pseudocode
+
 1. Create a server script.
 2. Setup a listening PORT.
 3. Setup routing for the HTML documents.
@@ -24,12 +30,14 @@ In the following exercise, the user is given HTML documents that take text input
 7. Deploy app on Heroku.
 
 ## Installation
-1. ```npm init```
-2. ```npm i express```
-3. ```npm i -D nodemon```
+
+1. `npm init`
+2. `npm i express`
+3. `npm i -D nodemon`
 
 ## Usage
-1. ```node server.js``` to run the app, if not using Heroku.
+
+1. `node server.js` to run the app, if not using Heroku.
 2. Enter a title in the input for title.
 3. Enter text in the text area.
 4. Click on the "plus" icon to create a new item.
@@ -38,6 +46,7 @@ In the following exercise, the user is given HTML documents that take text input
 7. To delete a saved item, click on the corresponding "trash can" icon.
 
 ## Technologies Used
+
 - HTML
 - CSS
 - JavaScript
@@ -45,18 +54,22 @@ In the following exercise, the user is given HTML documents that take text input
 - Express
 
 ## Resources
+
 - [nodemon](https://www.npmjs.com/package/nodemon)
 - [Express](https://www.tutorialspoint.com/expressjs/index.htm)
 - [Heroku](https://www.heroku.com/home)
 
 ## Links
+
 - [Heroku Deployed App](https://note-taker-huirayj.herokuapp.com/)
 - [Repository](https://github.com/huirayj/note-taker)
 
 ## Screenshots
+
 ### Desktop
+
 ![Note Taker Desktop](./public/assets/media/screenshots/note-taker-desktop.png)
 
 ## Demo
-![Note Taker Demo](./public/assets/media/demo/note-taker-demo.gif)
 
+![Note Taker Demo](./public/assets/media/demo/note-taker-demo.gif)
